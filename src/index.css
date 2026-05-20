@@ -1,0 +1,80 @@
+:root {
+  --color-bg-main: #2E2926;
+  --color-gold-primary: #C89B5A;
+  --color-gold-light: #E8C97A;
+  --color-gold-dark: #9A7240;
+  --color-white-soft: #F5F0E8;
+  --color-black-premium: #1A1714;
+  --color-nude: #D4B896;
+
+  --font-display: 'Playfair Display', serif;
+  --font-title: 'Cinzel Decorative', serif;
+  --font-body: 'Raleway', sans-serif;
+  --font-accent: 'Dancing Script', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-main);
+  color: var(--color-white-soft);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Lenis Smooth Scroll Recommended CSS */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Utilities */
+.text-gold { color: var(--color-gold-primary); }
+.text-gold-light { color: var(--color-gold-light); }
+.bg-black-premium { background-color: var(--color-black-premium); }
+.bg-bg-main { background-color: var(--color-bg-main); }
+.font-display { font-family: var(--font-display); }
+.font-title { font-family: var(--font-title); }
+.font-accent { font-family: var(--font-accent); }
+
+/* Layout classes */
+.section-padding {
+  padding: 100px 5%;
+}
+
+@media (min-width: 1200px) {
+  .section-padding {
+    padding: 120px 10%;
+  }
+}
