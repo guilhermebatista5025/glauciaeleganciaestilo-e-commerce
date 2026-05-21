@@ -16,7 +16,9 @@ import Shop from './components/Shop';
 import LoginPage from './components/LoginPage';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    return !sessionStorage.getItem('@glaucia/hasVisited');
+  });
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [wishlist, setWishlist] = useState([]);
@@ -175,7 +177,10 @@ function App() {
 
   return (
     <>
-      {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
+      {loading && <LoadingScreen onComplete={() => {
+        setLoading(false);
+        sessionStorage.setItem('@glaucia/hasVisited', 'true');
+      }} />}
       
       {!loading && (
         <>

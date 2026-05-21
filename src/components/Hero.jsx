@@ -25,9 +25,9 @@ const Hero = () => {
         .fromTo('.hero-badge', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.5");
 
       const titleWords = document.querySelectorAll('.hero-title-word');
-      tl.fromTo(titleWords, 
-        { opacity: 0, y: 30 }, 
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out' }, 
+      tl.fromTo(titleWords,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
         "-=0.2"
       );
 
@@ -35,29 +35,29 @@ const Hero = () => {
         .fromTo('.hero-desc', { opacity: 0 }, { opacity: 1, duration: 1 }, "-=0.2")
         .fromTo('.hero-btn', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.2 }, "-=0.5")
         .fromTo('.hero-scroll', { opacity: 0 }, { opacity: 1, duration: 1 }, "+=0.5");
-        
+
       // Parallax removido a pedido do usuário
     }
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
       id="inicio"
-      style={{ 
-        position: 'relative', 
-        width: '100%', 
-        height: '100vh', 
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100vh',
         overflow: 'hidden',
         backgroundColor: '#1A1714'
       }}
     >
       {/* HTML5 Native Video Background (100% Controle Local e Zero UI) */}
-      <video 
+      <video
         ref={videoRef}
-        autoPlay 
-        loop 
-        muted 
+        autoPlay
+        loop
+        muted
         playsInline
         style={{
           position: 'absolute',
@@ -73,12 +73,12 @@ const Hero = () => {
           objectFit: 'cover'
         }}
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src="/videos/hero.mp4" type="video/mp4" />
         Seu navegador não suporta o elemento de vídeo.
       </video>
-      
+
       {/* Overlay Escuro / Gradiente (Estilo TYP) */}
-      <div 
+      <div
         style={{
           position: 'absolute',
           top: 0,
@@ -92,7 +92,7 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <div 
+      <div
         ref={contentRef}
         style={{
           position: 'relative',
@@ -107,7 +107,7 @@ const Hero = () => {
         }}
       >
         <div className="hero-line-1" style={{ width: 0, height: '1px', backgroundColor: '#C89B5A', opacity: 0, marginBottom: '20px' }} />
-        
+
         <p className="hero-badge text-gold" style={{ fontSize: '11px', letterSpacing: '4px', marginBottom: '20px', textTransform: 'uppercase' }}>
           Trazendo Exclusividade
         </p>
@@ -124,7 +124,7 @@ const Hero = () => {
         </p>
 
         <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <button 
+          <button
             className="hero-btn"
             style={{
               backgroundColor: '#C89B5A',
@@ -142,8 +142,8 @@ const Hero = () => {
           >
             Explorar Coleção
           </button>
-          
-          <button 
+
+          <button
             className="hero-btn"
             style={{
               backgroundColor: 'transparent',
@@ -167,7 +167,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div 
+      <div
         className="hero-scroll"
         style={{
           position: 'absolute',
@@ -182,18 +182,18 @@ const Hero = () => {
         }}
       >
         <span style={{ fontSize: '10px', letterSpacing: '3px', color: '#F5F0E8', marginBottom: '10px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>SCROLL</span>
-        <svg 
-          width="12" 
-          height="12" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="#F5F0E8" 
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#F5F0E8"
           strokeWidth="2"
           style={{
             animation: 'bounce 2s infinite'
           }}
         >
-          <path d="M12 5v14M19 12l-7 7-7-7"/>
+          <path d="M12 5v14M19 12l-7 7-7-7" />
         </svg>
       </div>
 

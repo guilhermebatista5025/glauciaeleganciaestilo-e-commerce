@@ -23,4 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 *~
-*hero-video.mp4
+
+# Videos pesados
+public/videos/hero.mp4
